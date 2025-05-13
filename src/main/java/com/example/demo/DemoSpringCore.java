@@ -24,13 +24,16 @@ public class DemoSpringCore {
         timer.stop();
 
         NotificationSender sender = ctx.getBean(NotificationSender.class);
-        sender.notifyUser("hello");
+        sender.notifyUser("sms","hello");
+        sender.notifyUser("email","hello");
+
 
         ScopeBean bean = ctx.getBean(ScopeBean.class);
         bean.setData("111");
         System.out.println(bean.getData());
 
         System.out.println(ctx.getBean(ScopeBean.class).getData());
+
 
 
 
